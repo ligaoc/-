@@ -1,0 +1,27 @@
+{
+  "name": "悬浮计数球",
+  "version": "1.0",
+  "description": "在浏览器右侧显示一个可点击计数的悬浮球",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "悬浮计数球",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "permissions": ["storage", "clipboardRead", "clipboardWrite"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+} 

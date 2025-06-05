@@ -1,0 +1,92 @@
+#floating-counter-ball {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #4285f4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: move;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  touch-action: none;
+}
+
+#floating-counter-ball:hover {
+  background-color: #3367d6;
+}
+
+#floating-counter-ball:active {
+  background-color: #2a56c6;
+  transform: scale(0.95);
+}
+
+#counter-number {
+  font-family: Arial, sans-serif;
+  pointer-events: none;
+}
+
+/* 右键菜单样式 */
+#floating-ball-context-menu {
+  position: fixed;
+  min-width: 150px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  overflow: hidden;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-option {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.menu-option:hover {
+  background-color: #f5f5f5;
+}
+
+/* 提示消息样式 */
+#floating-ball-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 10001;
+  animation: toastFadeIn 0.3s, toastFadeOut 0.3s 1.7s;
+}
+
+@keyframes toastFadeIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes toastFadeOut {
+  from { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, 20px); }
+} 
